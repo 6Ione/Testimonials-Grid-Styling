@@ -6,6 +6,7 @@
    grid-template-rows: 200px 200px;
 
   * columns and rows can be used as grid-auto-columns/rows automatically but gives less control of the design.
+  * grid-auto-rows is dependant on the text contents
 
 * Naming the <div> with the style attribute helps style the grid area across the columns and rows.
 <div class="box" style="grid-area: box1">
