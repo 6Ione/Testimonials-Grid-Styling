@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed">
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -13,65 +13,187 @@
     .attribution { font-size: 0.6875rem; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
-    .body{
-      background-color: hsl(214, 17%, 92%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+body {
+    background-color: hsl(214, 17%, 92%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
     .container {
+      font-family: 'Barlow Semi Condensed', sans-serif;
+
+      
       display: grid;
-      grid-template-columns: 200px 200px 200px;
+      grid-auto-columns: 200px 200px 200px 200px 200px 300px;
       grid-auto-rows: auto;
       grid-template-areas:
-        "person1 person1 person2 person3"
-        "person4 person5 person5 person3";
-        
-      padding: 20px;
-      border: 1px solid black;
-      gap: 75px;
-      margin: 50px auto;
-      max-width: 1000px;
+        "person1 person1 person1 person2 person2 person3"
+        "person4 person4 person5 person5 person5 person3";
+
+      gap: 30px;
+      margin: 100px auto;
+      max-width: 1400px;
     }
     
-    .person1{
-      background-color: hsl(264, 82%, 80%);
+    .person1 {
+      background-color: hsl(264, 52%, 51%);
       border-radius: 10px;
+      box-shadow: 50px 20px 80px rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+
+      background-image: url("/images/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-position-x: 90%;
     }
-    .person1 h1{
+
+    .person2 {
+      background-color: hsl(226, 19%, 40%);
+      border-radius: 10px;
+      box-shadow: 50 20px 80px rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+    }
+
+    .person3 {
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 10px;
+      box-shadow: 25px 20px 80px rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+
+    }
+
+    .person4 {
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 10px;
+      box-shadow: 50px 20px 80px rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+    }
+
+    .person5 {
+      background-color: hsl(219, 22%, 15%);
+      border-radius: 10px;
+      box-shadow: 25px 20px 80px rgba(0, 0, 0, 0.3);
+      padding: 20px 30px;
+    }
+
+    .person-picture {
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:20px;
+    }
+
+    .person-picture img {
+      width:40px;
+      height:40px;
+      border-radius:50%;
+    }
+
+    .person-info h1 {
+      margin: 0;
       font-size: 13px;
     }
-    .person1 h2 {
-      font-size: 20px;
+
+    .person-info span {
+      display: block;
+      font-size: 11px;
+      color: hsl(0, 4%, 91%);
+      opacity: 0.8;
     }
-    .person2 {
-      background-color: hsl(224, 10%, 45%);
-      border-radius: 10px;
+
+    .person1 h1, .person2 h1 {
+      font-size: 13px;
+      color: white;
+      
+    }
+    .person1 h2, .person2 h2 {
+      font-size: 20px;
+      color: white;
+    }
+
+    .person1 p, .person2 p {
+      font-size: 15px;
+      color: hsl(0, 0%, 95%);
+      opacity: 0.8;
+    }
+
+    .person3 h1, .person4 h1 {
+      font-size: 13px;
+      color: hsl(222, 5%, 37%);
+    }
+    .person3 h2, .person4 h2 {
+      font-size: 20px;
+      color: hsl(218, 19%, 28%)
+    }
+    .person3 p, .person4 p {
+      font-size: 15px;
+      color: hsl(218, 19%, 28%)
+    }
+
+    .person3 span, .person4 span {
+      color: hsl(218, 19%, 28%)
+    }
+    .person5 h1 {
+      font-size: 13px;
+      color: rgb(214, 214, 218);
+    }
+
+    .person5 h2 {
+      font-size: 20px;
+      color: rgb(214, 214, 218);
+    }
+
+    .person5 p{
+      font-size: 15px;
+      color: rgb(214, 214, 218);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "person1"
+          "person2"
+          "person3"
+          "person4"
+          "person5";
+      }
     }
   </style>
 </head>
 <body>
   <main>
-
     <div class="container">
         <div class="person1" style="grid-area: person1">
-          <h1> Daniel Clifford</h1>
-          <p>Verified Graduate</p>
+          <div class="person-picture">
+            <img src="/images/image-daniel.jpg" alt="Daniel Clifford" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 15px;">
+            
+            <div class="person-info">
+              <h1> Daniel Clifford</h1>
+              <span>Verified Graduate</span>
+            </div>
+          </div>
+            <h2>I received a job offer mid-course, and the subjects I learned were current, if not more so, 
+                in the company I joined. I honestly feel I got every penny&apos;s worth</h2>
 
-          <h2>I received a job offer mid-course, and the subjects I learned were current, if not more so, 
-              in the company I joined. I honestly feel I got every penny&apos;s worth</h2>
-
-          <p>“ I was an EMT for many years before I joined the bootcamp. I&apos;ve been looking to make a 
-            transition and have heard some people who had an amazing experience here. I signed up 
-            for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
-            The next 12 weeks was the best - and most grueling - time of my life. Since completing 
-            the course, I&apos;ve successfully switched careers, working as a Software Engineer at a VR startup. ”</p>
+            <p>“ I was an EMT for many years before I joined the bootcamp. I&apos;ve been looking to make a 
+              transition and have heard some people who had an amazing experience here. I signed up 
+              for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
+              The next 12 weeks was the best - and most grueling - time of my life. Since completing 
+              the course, I&apos;ve successfully switched careers, working as a Software Engineer at a VR startup. ”</p>
         </div>
 
         <div class="person2" style="grid-area: person2">
-          <h1>Jonathan Walters</h1>
-          <p>Verified Graduate</p>
-
+          <div class="person-picture">
+            <img src="/images/image-jonathan.jpg" alt="Jonathan Walters" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 15px;">
+            
+            <div class="person-info">
+              <h1>Jonathan Walters</h1>
+              <span>Verified Graduate</span>
+            </div>
+          </div>
           <h2>The team was very supportive and kept me motivated</h2>
 
           <p>“ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer 
@@ -79,9 +201,14 @@
         </div>
 
         <div class="person3" style="grid-area: person3">
-          <h1>Kira Whittle</h1>
-          <p>Verified Graduate</p>
-
+          <div class="person-picture">
+            <img src="/images/image-kira.jpg" alt="Kira Whittle" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 15px;">
+            
+            <div class="person-info">
+              <h1>Kira Whittle</h1>
+              <span>Verified Graduate</span>
+            </div>
+          </div>
           <h2>Such a life-changing experience. Highly recommended!</h2>
 
           <p>“ Before joining the bootcamp, I&apos;ve never written a line of code. I needed some structure from 
@@ -95,9 +222,14 @@
         </div>
 
         <div class="person4" style="grid-area: person4">
-          <h1>Jeanette Harmon</h1>
-          <p>Verified Graduate</p>
+          <div class="person-picture">
+            <img src="/images/image-jeanette.jpg" alt="Jeanette Harmon" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 15px;">
 
+            <div class="person-info">
+              <h1>Jeanette Harmon</h1>
+              <span>Verified Graduate</span>
+            </div>
+          </div>
           <h2>An overall wonderful and rewarding experience</h2>
 
           <p>“ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living 
@@ -105,9 +237,14 @@
         </div>
 
         <div class="person5" style="grid-area: person5">
-          <h1>Patrick Abrams</h1>
-          <p>Verified Graduate</p>
-
+          <div class="person-picture">
+            <img src="/images/image-patrick.jpg" alt="Patrick Abrams" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 15px;">
+          
+            <div class="person-info">
+              <h1>Patrick Abrams</h1>
+              <span>Verified Graduate</span>
+            </div>
+          </div>
           <h2>Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and 
               learning from their experiences was easy.</h2>
 
